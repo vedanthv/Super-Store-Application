@@ -21,11 +21,12 @@ var productModal = $("#productModal");
     $("#saveProduct").on("click", function () {
         // If we found id value in form then update product detail
         var data = $("#productForm").serializeArray();
-        var requestPayload = {
-            product_name: null,
-            uom_id: null,
-            price_per_unit: null
-        };
+       var requestPayload = { //preparing request payload by iterating through the data array and creating a payload dictionary
+        product_id: 21,
+        product_name: null,
+        uom_id: null,
+        price_per_unit: null
+    };
         for (var i=0;i<data.length;++i) {
             var element = data[i];
             switch(element.name) {
